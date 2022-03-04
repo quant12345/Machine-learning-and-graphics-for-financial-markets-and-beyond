@@ -61,7 +61,7 @@ if __name__ == "__main__":
    w.show()
    sys.exit(app.exec_())
 ```
-**curve_roc_**
+**class curve_roc_:**
 For classification, a one-period increment with a shift of one is used. The "GradientBoostingClassifier" model is used.
 By adjusting the slider, select the desired ratio of fpr and tpr. Split - how much in % training data, class_= 1 or class_= 0
 
@@ -73,6 +73,22 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     w = scatter_2period_.curve_roc_(class_=0, df=df, split=70, depth=3, tree=100, L=0.3)
+    w.show()
+    sys.exit(app.exec_())
+```
+**class candle_pyqt:**
+Creates a candlestick chart with the ability to change the scale and scroll it. The "open_clicked" button creates a one-period increment with a shift of one.
+Training is conducted during the training period and further classification using the "GradientBoostingClassifier". The green dot classifies the growth, the red dot classifies the fall, the bold (large) designation of the training period. Also, a window with a balance chart is added at the bottom, which is based on the inputs. The "close_clicked" button closes all graphical series except the candlestick chart.
+parametr = [7, 50, 0.01]#parametr[0]-depth, parametr[1]-tree, parametr[2]-learning.
+```
+df = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
+parametr = [7, 50, 0.01]
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    w = scatter_2period_.candle_pyqt(df_=df, parametr_=parametr, split=70)
     w.show()
     sys.exit(app.exec_())
 ```
