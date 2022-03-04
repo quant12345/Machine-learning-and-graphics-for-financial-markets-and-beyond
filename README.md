@@ -1,4 +1,4 @@
-# Machine-Learning-in-Finance
+# Machine learning and graphics for financial markets and beyond.
 
 The following code is used for machine learning (classification) and financial market charts.
 A file is used for all called classes "scatter_2period_.py ". Price data is requested from yahoo.
