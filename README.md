@@ -32,6 +32,21 @@ if __name__ == "__main__":
     w.show()
     sys.exit(app.exec_())
 ```
+**class Main2Market:**
+Similar to the previous version. But, in the second increment, another financial instrument is used. In this case, these are bonds(^TNX). The second increment
+works much slower, since synchronization with the first increment is used. If the value was growing, then the point green, the falling
+point value will be red.
+```
+df1 = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
+df2 = web.DataReader('^TNX', 'yahoo', start='2010-05-15', end='2021-10-01')
 
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    w = scatter_2period_.Main2Market(df1_=df1, df2_=df2)
+    w.show()
+    sys.exit(app.exec_())
+```
 
 
