@@ -48,5 +48,16 @@ if __name__ == "__main__":
     w.show()
     sys.exit(app.exec_())
 ```
+**class curve_prec_rec:**
+For classification, a one-period increment with a shift of one is used. The "GradientBoostingClassifier" model is used.
+"decision_function()" is used to get the sum of points from "sklearn".By adjusting the "threshold" we get the optimal ratio of "precisions" and "recalls".
+```
+if __name__ == "__main__":
+   import sys
 
+   app = QtWidgets.QApplication(sys.argv)
+   w = scatter_2period_.curve_prec_rec(report=False, class_=1, df=df, split=70, depth=7, tree=100, L=0.01)#split-how much in % training data, class_=1 or class_=0
+   w.show()
+   sys.exit(app.exec_())
+```
 
