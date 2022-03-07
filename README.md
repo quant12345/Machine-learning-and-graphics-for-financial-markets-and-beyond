@@ -53,6 +53,8 @@ For classification, a one-period increment with a shift of one is used. The "Gra
 "decision_function()" is used to get the sum of points from "sklearn".By adjusting the "threshold" we get the optimal ratio of "precisions" and "recalls".
 report=True(prints "classification_report"), split - how much in % training data, class_= 1 or class_= 0
 ```
+df = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
+
 if __name__ == "__main__":
    import sys
 
