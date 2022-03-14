@@ -3,6 +3,7 @@
 The following code is used for machine learning (classification) and financial market charts.
 A file is used for all called classes "scatter_2period_.py ". Price data is requested from yahoo.
 The following libraries are required: PyQt5, numpy, sklearn, scipy, pandas_datareader.
+You can see more detailed work of the scripts [here](https://quant12345.github.io/index.html)
 
 ![Visually, everything looks like this](https://github.com/quant12345/Machine-Learning-in-Finance/blob/980b7b23d86cad6019950e8c586983d6a88336d1/chart.gif)
 
