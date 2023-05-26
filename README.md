@@ -2,6 +2,7 @@
 
 The following code is used for machine learning (classification) and financial market charts.
 A file is used for all called classes "scatter_2period_.py ". Price data is requested from yahoo.
+
 The following libraries are required: 
 [PyQt5](https://www.riverbankcomputing.com/static/Docs/PyQt5/introduction.html#pyqt5-components),
 [numpy](https://numpy.org/),
@@ -10,6 +11,10 @@ The following libraries are required:
 [TA-Lib](https://ta-lib.github.io/ta-lib-python/doc_index.html),
 [yfinance](https://github.com/ranaroussi/yfinance)
 
+You also need to install: PyQtChart.
+```
+python -m pip install PyQtChart 
+```
 You can see more detailed work of the scripts [here](https://quant12345.github.io/index.html)
 
 ![Visually, everything looks like this](https://github.com/quant12345/Machine-Learning-in-Finance/blob/980b7b23d86cad6019950e8c586983d6a88336d1/chart.gif)
@@ -18,7 +23,7 @@ The following modules are used to access classes:
 ```
 from PyQt5 import QtWidgets
 import scatter_2period_
-import pandas_datareader.data as web
+import yfinance as yf
 ```
 
 **class Main2Period:** 
@@ -27,10 +32,10 @@ periods with a shift of one.One increment on the x axis, the other on the y axis
 of the dot will be blue.
 ```
 from PyQt5 import QtWidgets
-import pandas_datareader.data as web
+import yfinance as yf
 import scatter_2period_
 
-df = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
+df = yf.download('GE', start='2007-05-15', end='2021-10-01')
 
 if __name__ == "__main__":
     import sys
@@ -45,8 +50,8 @@ Similar to the previous version. But, in the second increment, another financial
 works much slower, since synchronization with the first increment is used. If the value was growing, then the point green, the falling
 point value will be red.
 ```
-df1 = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
-df2 = web.DataReader('^TNX', 'yahoo', start='2010-05-15', end='2021-10-01')
+df1 = yf.download('GE', start='2007-05-15', end='2021-10-01')
+df2 = yf.download('^GSPC', start='2007-05-15', end='2021-10-01')
 
 if __name__ == "__main__":
     import sys
@@ -61,7 +66,7 @@ For classification, a one-period increment with a shift of one is used. The "Gra
 "decision_function()" is used to get the sum of points from "sklearn".By adjusting the "threshold" we get the optimal ratio of "precisions" and "recalls".
 report=True(prints "classification_report"), split - how much in % training data, class_= 1 or class_= 0
 ```
-df = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
+df = yf.download('GE', start='2007-05-15', end='2021-10-01')
 
 if __name__ == "__main__":
    import sys
@@ -76,7 +81,7 @@ For classification, a one-period increment with a shift of one is used. The "Gra
 By adjusting the slider, select the desired ratio of fpr and tpr. Split - how much in % training data, class_= 1 or class_= 0
 
 ```
-df = web.DataReader('^GSPC', 'yahoo', start='2020-05-15', end='2021-10-01')
+df = yf.download('GE', start='2007-05-15', end='2021-10-01')
 
 if __name__ == "__main__":
     import sys
@@ -91,7 +96,7 @@ Creates a candlestick chart with the ability to change the scale and scroll it. 
 Training is conducted during the training period and further classification using the "GradientBoostingClassifier". The green dot classifies the growth, the red dot classifies the fall, the bold (large) designation of the training period. Also, a window with a balance chart is added at the bottom, which is based on the inputs. The "close_clicked" button closes all graphical series except the candlestick chart.
 parametr = [7, 50, 0.01]#parametr[0]-depth, parametr[1]-tree, parametr[2]-learning.
 ```
-df = web.DataReader('^GSPC', 'yahoo', start='2010-05-15', end='2021-10-01')
+df = yf.download('GE', start='2007-05-15', end='2021-10-01')
 parametr = [7, 50, 0.01]
 
 if __name__ == "__main__":
