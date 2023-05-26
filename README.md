@@ -24,7 +24,7 @@ You can see more detailed work of the scripts [here](https://quant12345.github.i
 The following modules are used to access classes:
 ```
 from PyQt5 import QtWidgets
-import scatter_2period_
+import yfinance as yf
 import new_scatter_2period_
 ```
 
