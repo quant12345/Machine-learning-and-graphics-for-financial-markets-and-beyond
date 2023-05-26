@@ -1,7 +1,7 @@
 # Machine learning and graphics for financial markets and beyond.
 
 The following code is used for machine learning (classification) and financial market charts.
-A file is used for all called classes "scatter_2period_.py ". Price data is requested from yahoo.
+A file is used for all called classes "new_scatter_2period_.py". Price data is requested from yahoo.
 
 The old codes are saved in the file: **old_scatter_2period_.py**. New code that has been added and will be updated: **new_scatter_2period_.py**.
 
