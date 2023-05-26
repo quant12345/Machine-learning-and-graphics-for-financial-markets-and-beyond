@@ -3,6 +3,8 @@
 The following code is used for machine learning (classification) and financial market charts.
 A file is used for all called classes "scatter_2period_.py ". Price data is requested from yahoo.
 
+The old codes are saved in the file: **old_scatter_2period_.py**. New code that has been added and will be updated: **new_scatter_2period_.py**.
+
 The following libraries are required: 
 [PyQt5](https://www.riverbankcomputing.com/static/Docs/PyQt5/introduction.html#pyqt5-components),
 [numpy](https://numpy.org/),
@@ -27,9 +29,11 @@ import yfinance as yf
 ```
 
 **class Main2Period:** 
-creates two increments from a financial instrument with different and dynamically variable
-periods with a shift of one.One increment on the x axis, the other on the y axis. If the value was growing, then the dot is green, the falling value
-of the dot will be blue.
+Class that launches a chart in which you move the indicator period with the slider and select the one you need from the drop-down menu. The graph is immediately redrawn and you can see how the data changes interactively. 
+
+The indicator values are taken with a shift of 1. If the candle closed above or at the same level as the open, then the dot is green, if the close was with a decrease, then its color is blue.
+
+All you need to do is just pass a dataframe that has columns: 'Open','High', 'Low', 'Close'. Most indicators from the TA-LIB library are calculated: with one parameter(RSI, CCI, Momentum, SMA, EMA and others).
 ```
 from PyQt5 import QtWidgets
 import yfinance as yf
