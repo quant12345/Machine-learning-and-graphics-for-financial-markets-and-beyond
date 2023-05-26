@@ -25,7 +25,7 @@ The following modules are used to access classes:
 ```
 from PyQt5 import QtWidgets
 import scatter_2period_
-import yfinance as yf
+import new_scatter_2period_
 ```
 
 **class Main2Period:** 
@@ -37,7 +37,7 @@ All you need to do is just pass a dataframe that has columns: 'Open','High', 'Lo
 ```
 from PyQt5 import QtWidgets
 import yfinance as yf
-import scatter_2period_
+import new_scatter_2period_
 
 df = yf.download('GE', start='2007-05-15', end='2021-10-01')
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    w = scatter_2period_.Main2Period(df_=df)
+    w = new_scatter_2period_.Main2Period(df_=df)
     w.show()
     sys.exit(app.exec_())
 ```
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    w = scatter_2period_.Main2Market(df1_=df1, df2_=df2)
+    w = new_scatter_2period_.Main2Market(df1_=df1, df2_=df2)
     w.show()
     sys.exit(app.exec_())
 ```
@@ -76,7 +76,7 @@ if __name__ == "__main__":
    import sys
 
    app = QtWidgets.QApplication(sys.argv)
-   w = scatter_2period_.curve_prec_rec(report=False, class_=1, df=df, split=70, depth=7, tree=100, L=0.01)
+   w = new_scatter_2period_.curve_prec_rec(report=False, class_=1, df=df, split=70, depth=7, tree=100, L=0.01)
    w.show()
    sys.exit(app.exec_())
 ```
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    w = scatter_2period_.curve_roc_(class_=0, df=df, split=70, depth=3, tree=100, L=0.3)
+    w = new_scatter_2period_.curve_roc_(class_=0, df=df, split=70, depth=3, tree=100, L=0.3)
     w.show()
     sys.exit(app.exec_())
 ```
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    w = scatter_2period_.candle_pyqt(df_=df, parametr_=parametr, split=70)
+    w = new_scatter_2period_.candle_pyqt(df_=df, parametr_=parametr, split=70)
     w.show()
     sys.exit(app.exec_())
 ```
