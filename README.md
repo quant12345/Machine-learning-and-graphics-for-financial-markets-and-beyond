@@ -2,9 +2,13 @@
 
 The following code is used for machine learning (classification) and financial market charts.
 A file is used for all called classes "scatter_2period_.py ". Price data is requested from yahoo.
-The following libraries are required: PyQt5, numpy, sklearn, scipy, pandas_datareader.
-
-[TA-Lib](https://ta-lib.github.io/ta-lib-python/doc_index.html)
+The following libraries are required: 
+[PyQt5](https://www.riverbankcomputing.com/static/Docs/PyQt5/introduction.html#pyqt5-components),
+[numpy](https://numpy.org/),
+[sklearn](https://scikit-learn.org/stable/index.html),
+[scipy](https://scipy.org/),
+[TA-Lib](https://ta-lib.github.io/ta-lib-python/doc_index.html),
+[yfinance](https://github.com/ranaroussi/yfinance)
 
 You can see more detailed work of the scripts [here](https://quant12345.github.io/index.html)
 
