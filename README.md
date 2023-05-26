@@ -8,6 +8,7 @@ The old codes are saved in the file: **old_scatter_2period_.py**. New code that 
 The following libraries are required: 
 [PyQt5](https://www.riverbankcomputing.com/static/Docs/PyQt5/introduction.html#pyqt5-components),
 [numpy](https://numpy.org/),
+[pandas](https://pandas.pydata.org/),
 [sklearn](https://scikit-learn.org/stable/index.html),
 [scipy](https://scipy.org/),
 [TA-Lib](https://ta-lib.github.io/ta-lib-python/doc_index.html),
