@@ -51,18 +51,29 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 ```
 **class Main2Market:**
-Similar to the previous version. But, in the second increment, another financial instrument is used. In this case, these are bonds(^TNX). The second increment
-works much slower, since synchronization with the first increment is used. If the value was growing, then the point green, the falling
-point value will be red.
+Similar to the previous version. But, in the second increment, another financial instrument is used. In this case, these are S&P 500(^GSPC). The class has been improved and now the second tool works much faster. If the value was growing or equally, then the point green, the falling point value will be red.
+
+Added various indicators from the library: TA-Lib (which are calculated only by one column, unlike the previous class).
+
+To work, you need the main 'df' dataframe, which should have columns: 'Open', 'Close'. Dataframe 'df1' for another financial instrument. You must also specify which columns to calculate the indicators for: cl1_='Close', cl2_='Close'. In this example, a [1-minute timeframe](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases) is used (by default, it is equal to the daily timeframe). If you are using a daily timeframe, then you can leave it out. The daily timeframe example lines are commented out (you can try them).
 ```
-df1 = yf.download('GE', start='2007-05-15', end='2021-10-01')
-df2 = yf.download('^GSPC', start='2007-05-15', end='2021-10-01')
+from PyQt5 import QtWidgets
+import yfinance as yf
+import new_scatter_2period_
+
+
+#df = yf.download('BAC', start='2007-05-15', end='2021-10-01')
+#df1 = yf.download('^GSPC', start='2007-05-15', end='2021-10-01')
+
+df = yf.download('BAC', period='5d', interval='1m')
+df1 = yf.download('^GSPC', period='5d', interval='1m')
+
 
 if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    w = new_scatter_2period_.Main2Market(df1_=df1, df2_=df2)
+    w = new_scatter_2period_.Main2Market(df_=df, df1_=df1, cl1_='Close', cl2_='Close', timeframe_='T')
     w.show()
     sys.exit(app.exec_())
 ```
