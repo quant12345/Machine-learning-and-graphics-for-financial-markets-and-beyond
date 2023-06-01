@@ -51,7 +51,7 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 ```
 **class Main2Market:**
-Similar to the previous version. But, in the second increment, another financial instrument is used. In this case, these are S&P 500(^GSPC). The class has been improved and now the second tool works much faster. If the value was growing or equally, then the point green, the falling point value will be red.
+Similar to the previous version. But, in the second dataframe, another financial instrument is used. In this case, these are S&P 500(^GSPC). The class has been improved and now the second tool works much faster. If the value was growing or equally, then the point green, the falling point value will be red.
 
 Added various indicators from the library: TA-Lib (which are calculated only by one column, unlike the previous class).
 
